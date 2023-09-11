@@ -8,7 +8,7 @@ import { Container } from "../container/Container";
 import style from "./style.module.css";
 import MoreButtonsGroup from "../moreButtonsGroup/MoreButtonsGroup";
 import CounterControls from "../counterControls/CounterControls";
-// import IncDecGroupButton from "../incDecGroupButton/incDecGroupButton";
+import IncDecGroupButton from "../incDecGroupButton/IncDecGroupButton";
 
 const Counter = () => {
   const count = useSelector((state: RootState) => state.counter.count);
@@ -33,7 +33,7 @@ const Counter = () => {
         <CounterControls resetAll={resetAll} />
         <div className={style.counter__box}>
           <AnimatedNumber value={count} />
-          {/* <IncDecGroupButton /> */}
+          <IncDecGroupButton />
           <div className={style.input__wrapper}>
             <form onSubmit={handleAddAmount} className={style.form}>
               <input
