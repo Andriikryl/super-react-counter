@@ -1,7 +1,7 @@
 "use client";
-
 import { motion, useSpring, useTransform } from "framer-motion";
 import { useEffect } from "react";
+import style from "./style.module.css";
 
 export function AnimatedNumber({ value }: { value: number }) {
   let spring = useSpring(value, { mass: 0.8, stiffness: 75, damping: 15 });
@@ -13,5 +13,5 @@ export function AnimatedNumber({ value }: { value: number }) {
     spring.set(value);
   }, [spring, value]);
 
-  return <motion.span>{display}</motion.span>;
+  return <motion.span className={style.amount}>{display}</motion.span>;
 }

@@ -9,6 +9,8 @@ import {
 import { useState } from "react";
 import { RootState } from "../../store/store";
 import { AnimatedNumber } from "../animateValue/AnimatedNumber";
+import { Container } from "../container/Container";
+import style from "./style.module.css";
 
 const Counter = () => {
   const count = useSelector((state: RootState) => state.counter.count);
@@ -24,25 +26,49 @@ const Counter = () => {
   };
 
   return (
-    <section>
-      <AnimatedNumber value={count} />
-      <div>
-        <button onClick={() => dispatch(increment())}>+</button>
-        <button onClick={() => dispatch(decrement())}>-</button>
-      </div>
-
-      <input
-        type="text"
-        value={incrementAmount}
-        onChange={(e) => setIncrementAmount(parseInt(e.target.value))}
-      />
-
-      <div>
-        <button onClick={() => dispatch(incrementByAmount(addValue))}>
-          Add Amount
-        </button>
-        <button onClick={resetAll}>Reset</button>
-      </div>
+    <section className={style.count__section}>
+      <Container>
+        <div className={style.box__controls}>
+          <button className={style.reset__button} onClick={resetAll}>
+            Reset
+          </button>
+        </div>
+        <div className={style.counter__box}>
+          <AnimatedNumber value={count} />
+          <div className={style.button__group}>
+            <button
+              className={style.button}
+              onClick={() => dispatch(increment())}
+            >
+              +
+            </button>
+            <button
+              className={style.button}
+              onClick={() => dispatch(decrement())}
+            >
+              -
+            </button>
+          </div>
+          <div className={style.input__wrapper}>
+            <input
+              type="number"
+              className={style.input}
+              id="name"
+              placeholder="type number"
+              onChange={(e) => setIncrementAmount(parseInt(e.target.value))}
+            />
+            <label className={style.label} htmlFor="name">
+              Type number here...
+            </label>
+            <button
+              className={style.input__button}
+              onClick={() => dispatch(incrementByAmount(addValue))}
+            >
+              Add Amount
+            </button>
+          </div>
+        </div>
+      </Container>
     </section>
   );
 };

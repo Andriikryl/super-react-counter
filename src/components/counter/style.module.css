@@ -1,0 +1,158 @@
+.count__section{
+    height: 100dvh;
+    background-color: #1d1d1d;
+    padding-block-start: 100px;
+}
+
+.counter__box{
+    max-width: 700px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid white;
+    padding: 40px;
+}
+
+.button__group{
+    display: flex;
+    gap: 30px;
+    margin-block-end: 30px;
+    padding-block-end: 30px;
+    border-bottom: 2px solid white;
+}
+
+.button{
+    background-color: transparent;
+    width: 50px;
+    aspect-ratio: 1/1;
+    border: 1px solid white;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 3px 3px rgba(251, 250, 250, 0.709);
+    transition: all 500ms ease-in-out;
+}
+
+.button:hover{
+    box-shadow: 0 1px 1px rgba(234, 232, 232, 0.743), 
+    0 2px 2px rgba(236, 232, 232, 0.766), 
+    0 4px 4px rgba(230, 228, 228, 0.718), 
+    0 8px 8px rgba(233, 230, 230, 0.862),
+    0 16px 16px rgba(230, 226, 226, 0.792);
+}
+
+.input__group{
+    margin-block-end: 30px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    padding: 30px;
+}
+
+.counter__input{
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+}
+
+.input__button{
+    border-left: none;
+    background-color: transparent;
+    padding: 13px;
+    cursor: pointer;
+    color: white;
+    border: 1px solid white;
+}
+
+.box__controls{
+    border: 1px solid white;
+    max-width: 700px;
+    margin-inline: auto;
+    padding: 20px;
+}
+
+.reset__button{
+    padding: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+}
+
+
+.input__wrapper {
+    position: relative;
+    margin-block-end: 30px;
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    padding: 50px;
+  }
+  
+  .input {
+    padding: 10px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-size: 20px;
+    transition: border-color 250ms;
+    background-color: transparent;
+  }
+  .input:focus {
+    outline: none;
+    border-bottom-color: #777;
+  }
+  .input::placeholder {
+    color: transparent;
+  }
+  .input::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+  }
+  
+  .label {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+    color: white;
+    pointer-events: none;
+    transform-origin: left center;
+    transition: transform 250ms;
+    font-family: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+  }
+  
+  .input:focus + .label,
+  .input:not(:placeholder-shown) + .label {
+    transform: translateY(-150%) scale(0.75);
+  }
+  
+  .clear {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    position: absolute;
+    top: 50%;
+    right: -9px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: white;
+    transition: color 250ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .clear:hover, .clear:focus {
+    color: white;
+  }
+  
+  .input:placeholder-shown + .label + .clear {
+    display: none;
+  }
