@@ -9,12 +9,13 @@ import style from "./style.module.css";
 import MoreButtonsGroup from "../moreButtonsGroup/MoreButtonsGroup";
 import CounterControls from "../counterControls/CounterControls";
 import IncDecGroupButton from "../incDecGroupButton/IncDecGroupButton";
+import ListNUmbers from "../listNumbers/ListNUmbers";
 
 const Counter = () => {
+  const [incrementAmount, setIncrementAmount] = useState(0);
+  const [numberList, setNumberList] = useState<number[]>([]);
   const count = useSelector((state: RootState) => state.counter.count);
   const dispatch = useDispatch();
-
-  const [incrementAmount, setIncrementAmount] = useState(0);
 
   const addValue = Number(incrementAmount) || 0;
 
@@ -27,32 +28,42 @@ const Counter = () => {
     dispatch(incrementByAmount(addValue));
   };
 
+  const addToNumberList = () => {
+    setNumberList((prevList) => [...prevList, count]); // Add the current count to the list
+  };
+
   return (
     <section className={style.count__section}>
-      <Container>
-        <CounterControls resetAll={resetAll} />
-        <div className={style.counter__box}>
-          <AnimatedNumber value={count} />
-          <IncDecGroupButton />
-          <div className={style.input__wrapper}>
-            <form onSubmit={handleAddAmount} className={style.form}>
-              <input
-                type="number"
-                className={style.input}
-                id="name"
-                placeholder="type number"
-                onChange={(e) => setIncrementAmount(parseInt(e.target.value))}
-              />
-              <label className={style.label} htmlFor="name">
-                Type number here...
-              </label>
-              <button className={style.input__button} type="submit">
-                Add Amount
-              </button>
-            </form>
+      <Container className={style.container}>
+        <ListNUmbers numberList={numberList} />
+        <div className={style.counter__body}>
+          <CounterControls
+            resetAll={resetAll}
+            addToNumberList={addToNumberList}
+          />
+          <div className={style.counter__box}>
+            <AnimatedNumber value={count} />
+            <IncDecGroupButton />
+            <div className={style.input__wrapper}>
+              <form onSubmit={handleAddAmount} className={style.form}>
+                <input
+                  type="number"
+                  className={style.input}
+                  id="name"
+                  placeholder="type number"
+                  onChange={(e) => setIncrementAmount(parseInt(e.target.value))}
+                />
+                <label className={style.label} htmlFor="name">
+                  Type number here...
+                </label>
+                <button className={style.input__button} type="submit">
+                  Add Amount
+                </button>
+              </form>
+            </div>
           </div>
+          <MoreButtonsGroup />
         </div>
-        <MoreButtonsGroup />
       </Container>
     </section>
   );

@@ -1,11 +1,11 @@
 .box__controls{
     border: 1px solid white;
-    max-width: 700px;
-    margin-inline: auto;
     padding: 20px;
+    display: flex;
+    gap: 20px;
 }
 
-.reset__button{
+.button{
     padding: 10px;
     border: 1px solid white;
     background-color: transparent;

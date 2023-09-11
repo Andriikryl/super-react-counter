@@ -1,0 +1,47 @@
+.list__box{
+    grid-area: sidebar; 
+    border: 1px solid white;
+    padding: 20px;
+  }
+
+  .list__title{
+    font-size: 20px;
+    color: white;
+    margin-block-end: 20px;
+  }
+
+  .list{
+    display: flex;
+    flex-direction: column;
+    counter-reset: item;
+    gap: 10px;
+  }
+
+  .list__item{
+    list-style: none;
+    color: white;
+    border-bottom: 1px solid white;
+    padding-block-end: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .list__item::before{
+    counter-increment: item; 
+    content: '' counter(item) '.';
+    display: block;
+    text-align: center;
+    font-family: StratosSkyeng Web;
+    height: 30px;
+    aspect-ratio: 1/1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid white;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; 
+  }
