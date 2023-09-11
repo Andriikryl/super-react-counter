@@ -1,19 +1,14 @@
 "use client";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  increment,
-  decrement,
-  reset,
-  incrementByAmount,
-} from "../../features/counterSlice";
+import { reset, incrementByAmount } from "../../features/counterSlice";
 import { useState } from "react";
 import { RootState } from "../../store/store";
 import { AnimatedNumber } from "../animateValue/AnimatedNumber";
 import { Container } from "../container/Container";
 import style from "./style.module.css";
-import { defaultFAQs } from "../Accordion/defaultValues";
-import Accordion from "../Accordion/Accordion";
 import MoreButtonsGroup from "../moreButtonsGroup/MoreButtonsGroup";
+import CounterControls from "../counterControls/CounterControls";
+import IncDecGroupButton from "../incDecGroupButton/incDecGroupButton";
 
 const Counter = () => {
   const count = useSelector((state: RootState) => state.counter.count);
@@ -31,27 +26,10 @@ const Counter = () => {
   return (
     <section className={style.count__section}>
       <Container>
-        <div className={style.box__controls}>
-          <button className={style.reset__button} onClick={resetAll}>
-            Reset
-          </button>
-        </div>
+        <CounterControls resetAll={resetAll} />
         <div className={style.counter__box}>
           <AnimatedNumber value={count} />
-          <div className={style.button__group}>
-            <button
-              className={style.button}
-              onClick={() => dispatch(increment())}
-            >
-              +
-            </button>
-            <button
-              className={style.button}
-              onClick={() => dispatch(decrement())}
-            >
-              -
-            </button>
-          </div>
+          <IncDecGroupButton />
           <div className={style.input__wrapper}>
             <input
               type="number"

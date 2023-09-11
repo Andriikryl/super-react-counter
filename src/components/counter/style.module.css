@@ -16,33 +16,6 @@
     padding: 40px;
 }
 
-.button__group{
-    display: flex;
-    gap: 30px;
-    margin-block-end: 30px;
-    padding-block-end: 30px;
-    border-bottom: 2px solid white;
-}
-
-.button{
-    background-color: transparent;
-    width: 50px;
-    aspect-ratio: 1/1;
-    border: 1px solid white;
-    cursor: pointer;
-    color: white;
-    box-shadow: 0 3px 3px rgba(251, 250, 250, 0.709);
-    transition: all 500ms ease-in-out;
-}
-
-.button:hover{
-    box-shadow: 0 1px 1px rgba(234, 232, 232, 0.743), 
-    0 2px 2px rgba(236, 232, 232, 0.766), 
-    0 4px 4px rgba(230, 228, 228, 0.718), 
-    0 8px 8px rgba(233, 230, 230, 0.862),
-    0 16px 16px rgba(230, 226, 226, 0.792);
-}
-
 .input__group{
     margin-block-end: 30px;
     display: flex;
@@ -66,21 +39,6 @@
     cursor: pointer;
     color: white;
     border: 1px solid white;
-}
-
-.box__controls{
-    border: 1px solid white;
-    max-width: 700px;
-    margin-inline: auto;
-    padding: 20px;
-}
-
-.reset__button{
-    padding: 10px;
-    border: 1px solid white;
-    background-color: transparent;
-    cursor: pointer;
-    color: white;
 }
 
 
