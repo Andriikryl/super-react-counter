@@ -2,6 +2,20 @@
     grid-area: sidebar; 
     border: 1px solid white;
     padding: 20px;
+    height: 692px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+
+  .list__box::-webkit-scrollbar{
+    width: 5px;
+  }
+  .list__box::-webkit-scrollbar-track{
+    background: black;
+  }
+
+  .list__box::-webkit-scrollbar-thumb{
+    background: white;
   }
 
   .list__title{
