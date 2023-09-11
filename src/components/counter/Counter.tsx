@@ -22,6 +22,10 @@ const Counter = () => {
     setIncrementAmount(0);
     dispatch(reset());
   };
+  const handleAddAmount = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(incrementByAmount(addValue));
+  };
 
   return (
     <section className={style.count__section}>
@@ -31,22 +35,21 @@ const Counter = () => {
           <AnimatedNumber value={count} />
           <IncDecGroupButton />
           <div className={style.input__wrapper}>
-            <input
-              type="number"
-              className={style.input}
-              id="name"
-              placeholder="type number"
-              onChange={(e) => setIncrementAmount(parseInt(e.target.value))}
-            />
-            <label className={style.label} htmlFor="name">
-              Type number here...
-            </label>
-            <button
-              className={style.input__button}
-              onClick={() => dispatch(incrementByAmount(addValue))}
-            >
-              Add Amount
-            </button>
+            <form onSubmit={handleAddAmount} className={style.form}>
+              <input
+                type="number"
+                className={style.input}
+                id="name"
+                placeholder="type number"
+                onChange={(e) => setIncrementAmount(parseInt(e.target.value))}
+              />
+              <label className={style.label} htmlFor="name">
+                Type number here...
+              </label>
+              <button className={style.input__button} type="submit">
+                Add Amount
+              </button>
+            </form>
           </div>
         </div>
         <MoreButtonsGroup />

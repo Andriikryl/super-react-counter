@@ -115,3 +115,8 @@
   .input:placeholder-shown + .label + .clear {
     display: none;
   }
+
+  .form{
+    display: flex;
+    align-items: center;
+  }
