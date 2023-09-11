@@ -29,13 +29,17 @@ const Counter = () => {
   };
 
   const addToNumberList = () => {
-    setNumberList((prevList) => [...prevList, count]); // Add the current count to the list
+    setNumberList((prevList) => [...prevList, count]);
+  };
+
+  const handleDeleteNumber = (index: number) => {
+    setNumberList((prevList) => prevList.filter((_, i) => i !== index));
   };
 
   return (
     <section className={style.count__section}>
       <Container className={style.container}>
-        <ListNUmbers numberList={numberList} />
+        <ListNUmbers numberList={numberList} onDelete={handleDeleteNumber} />
         <div className={style.counter__body}>
           <CounterControls
             resetAll={resetAll}

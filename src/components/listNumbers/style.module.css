@@ -1,7 +1,7 @@
 .list__box{
     grid-area: sidebar; 
     border: 1px solid white;
-    padding: 20px;
+    padding: 30px;
     height: 692px;
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -39,6 +39,19 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+  
+  .flex__group{
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .delete__button{
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    color: white;
   }
 
   .list__item::before{
