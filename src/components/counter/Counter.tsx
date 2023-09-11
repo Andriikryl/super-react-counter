@@ -8,7 +8,7 @@ import { Container } from "../container/Container";
 import style from "./style.module.css";
 import MoreButtonsGroup from "../moreButtonsGroup/MoreButtonsGroup";
 import CounterControls from "../counterControls/CounterControls";
-import IncDecGroupButton from "../incDecGroupButton/incDecGroupButton";
+// import IncDecGroupButton from "../incDecGroupButton/incDecGroupButton";
 
 const Counter = () => {
   const count = useSelector((state: RootState) => state.counter.count);
