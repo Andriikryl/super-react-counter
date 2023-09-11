@@ -1,0 +1,74 @@
+.accordion{
+    min-width: 300px;
+    padding-block: 25px;
+    padding-inline: 30px;
+    backdrop-filter: blur(16px);
+    border: 1px solid white;
+}
+
+
+.accordion__button{
+    width: max-content;
+    margin-right: auto;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 161.523%; 
+    display: flex;
+    background-color: transparent;
+    border: none;
+    align-items: center;
+    gap: 30px;
+    flex-direction: row-reverse;
+}
+
+.faq{
+    padding-block: 100px;
+    position: relative;
+}
+
+.faq::before{
+    content: "";
+    display: block;
+    background-image: url("/faq/image 44.png");
+    width: 403px;
+    height: 347px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.faq__title{
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-block-end: 60px;
+}
+
+.faq__box{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+
+.accordion__box{
+    padding-block-start: 40px;
+}
+
+.accordion__body{
+    color: #B1B1B1;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 161.523%; 
+    width: 100%;
+}

@@ -11,6 +11,9 @@ import { RootState } from "../../store/store";
 import { AnimatedNumber } from "../animateValue/AnimatedNumber";
 import { Container } from "../container/Container";
 import style from "./style.module.css";
+import { defaultFAQs } from "../Accordion/defaultValues";
+import Accordion from "../Accordion/Accordion";
+import MoreButtonsGroup from "../moreButtonsGroup/MoreButtonsGroup";
 
 const Counter = () => {
   const count = useSelector((state: RootState) => state.counter.count);
@@ -68,6 +71,7 @@ const Counter = () => {
             </button>
           </div>
         </div>
+        <MoreButtonsGroup />
       </Container>
     </section>
   );

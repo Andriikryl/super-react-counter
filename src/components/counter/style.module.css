@@ -2,6 +2,7 @@
     height: 100dvh;
     background-color: #1d1d1d;
     padding-block-start: 100px;
+    margin-block-end: 200px;
 }
 
 .counter__box{

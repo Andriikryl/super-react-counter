@@ -11,6 +11,18 @@ export const counterSlice = createSlice({
         increment: (state) => {
             state.count += 1;
         },
+        incrementBy100: (state) => {
+            state.count += 100;
+        },
+        incrementBy1000: (state) => {
+            state.count += 1000;
+        },
+        incrementBy10000: (state) => {
+            state.count += 10000;
+        },
+        incrementBy100000: (state) => {
+            state.count += 100000;
+        },
         decrement: (state) => {
             state.count -= 1;
         },
@@ -23,6 +35,6 @@ export const counterSlice = createSlice({
     }
 });
 
-export const { increment, decrement, reset, incrementByAmount } = counterSlice.actions;
+export const { increment, decrement, reset, incrementByAmount,incrementBy100,incrementBy1000,incrementBy10000,incrementBy100000 } = counterSlice.actions;
 
 export default counterSlice.reducer;
