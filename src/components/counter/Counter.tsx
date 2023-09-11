@@ -33,7 +33,7 @@ const Counter = () => {
         <CounterControls resetAll={resetAll} />
         <div className={style.counter__box}>
           <AnimatedNumber value={count} />
-          <IncDecGroupButton />
+          {/* <IncDecGroupButton /> */}
           <div className={style.input__wrapper}>
             <form onSubmit={handleAddAmount} className={style.form}>
               <input
