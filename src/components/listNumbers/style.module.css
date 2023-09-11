@@ -72,3 +72,15 @@
     font-weight: 500;
     line-height: 100%; 
   }
+
+  .deleteAll__button{
+    padding: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+  }
+
+  .list__controls{
+    padding-block: 10px;
+  }

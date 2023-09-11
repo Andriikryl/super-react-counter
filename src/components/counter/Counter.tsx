@@ -36,14 +36,23 @@ const Counter = () => {
     setNumberList((prevList) => prevList.filter((_, i) => i !== index));
   };
 
+  const handleDeleteAll = () => {
+    setNumberList([]);
+  };
+
   return (
     <section className={style.count__section}>
       <Container className={style.container}>
-        <ListNUmbers numberList={numberList} onDelete={handleDeleteNumber} />
+        <ListNUmbers
+          numberList={numberList}
+          onDelete={handleDeleteNumber}
+          onDeleteAll={handleDeleteAll}
+        />
         <div className={style.counter__body}>
           <CounterControls
             resetAll={resetAll}
             addToNumberList={addToNumberList}
+            handleDeleteAll={handleDeleteAll}
           />
           <div className={style.counter__box}>
             <AnimatedNumber value={count} />
