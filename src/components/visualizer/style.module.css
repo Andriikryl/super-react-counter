@@ -1,0 +1,37 @@
+.visualizer{
+    margin-block-end: 100px;
+}
+.visualizer__box{
+    border: 1px solid white;
+    min-height: 350px;
+    padding-inline: 20px;
+    padding-block-start: 20px;
+    display: flex;
+    align-items: end;
+    gap: 20px;
+    max-width: 1320px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.visualizer__title{
+    font-size: 25px;
+    color: white;
+    margin-block-end: 10px;
+}
+
+.element__number{
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    left: 3px;
+    color: #ff4617;
+    transform: rotate(90deg);
+}
+
+.element{
+    flex-shrink: 0;
+    width: 40px;
+    position: relative;
+    border: 1px solid white;
+}
