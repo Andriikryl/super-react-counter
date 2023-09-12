@@ -11,14 +11,31 @@ export default function Statistic() {
     0
   );
 
+  const smallestNumber = numberList.reduce((min, current) => {
+    return current < min ? current : min;
+  }, numberList[0]);
+
+  const largestNumber = numberList.reduce((max, current) => {
+    return current > max ? current : max;
+  }, numberList[0]);
+
   return (
     <section className={style.statistic}>
       <Container>
         <div className={style.statistic__box}>
           <h3 className={style.statistic__title}>Statistic</h3>
-          <div>
+          <div className={style.statistic__description}>
             <p className={style.total__sum}>
-              Total sum: <span>{totalSum}</span>
+              <span className={style.num__title}>Total sum: </span>{" "}
+              <span className={style.stut__number}>{totalSum}</span>
+            </p>
+            <p className={style.total__sum}>
+              <span className={style.num__title}>The smallest number:</span>{" "}
+              <span className={style.stut__number}>{smallestNumber}</span>
+            </p>
+            <p className={style.total__sum}>
+              <span className={style.num__title}>The biggest number:</span>
+              <span className={style.stut__number}>{largestNumber}</span>
             </p>
           </div>
         </div>

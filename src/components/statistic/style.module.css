@@ -8,14 +8,29 @@
     color: white;
     font-size: 25px;
     border-bottom: 1px solid white;
-    margin-block-end: 10px;
+}
+
+.statistic__description{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-left: 1px solid white;
+    padding-block-start: 20px;
+    padding-inline-start: 20px;
 }
 
 .total__sum{
+    display: flex;
+    gap: 20px;
     font-size: 20px;
     color: white;
 }
 
-.total__sum span{
+.num__title{
+    display: block;
+    min-width: 200px;
+}
+
+.stut__number{
     border-bottom: 3px solid #ff4617;
 }
