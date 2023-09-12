@@ -2,7 +2,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { reset, incrementByAmount } from "../../features/counterSlice";
 import { useState } from "react";
-import { RootState } from "../../store/store";
 import { AnimatedNumber } from "../animateValue/AnimatedNumber";
 import { Container } from "../container/Container";
 import style from "./style.module.css";
@@ -10,10 +9,12 @@ import MoreButtonsGroup from "../moreButtonsGroup/MoreButtonsGroup";
 import CounterControls from "../counterControls/CounterControls";
 import IncDecGroupButton from "../incDecGroupButton/IncDecGroupButton";
 import ListNUmbers from "../listNumbers/ListNUmbers";
+import { addNumber, deleteAllNumbers } from "@/features/listSlice";
+import { RootState } from "@/store/store";
 
 const Counter = () => {
   const [incrementAmount, setIncrementAmount] = useState(0);
-  const [numberList, setNumberList] = useState<number[]>([]);
+  const numberList = useSelector((state: RootState) => state.list.numberList);
   const count = useSelector((state: RootState) => state.counter.count);
   const dispatch = useDispatch();
 
@@ -29,25 +30,17 @@ const Counter = () => {
   };
 
   const addToNumberList = () => {
-    setNumberList((prevList) => [...prevList, count]);
-  };
-
-  const handleDeleteNumber = (index: number) => {
-    setNumberList((prevList) => prevList.filter((_, i) => i !== index));
+    dispatch(addNumber(count));
   };
 
   const handleDeleteAll = () => {
-    setNumberList([]);
+    dispatch(deleteAllNumbers());
   };
 
   return (
     <section className={style.count__section}>
       <Container className={style.container}>
-        <ListNUmbers
-          numberList={numberList}
-          onDelete={handleDeleteNumber}
-          onDeleteAll={handleDeleteAll}
-        />
+        <ListNUmbers numberList={numberList} />
         <div className={style.counter__body}>
           <CounterControls
             resetAll={resetAll}

@@ -1,15 +1,19 @@
 "use client";
 import React from "react";
+import { useDispatch } from "react-redux";
 import style from "./style.module.css";
 import { AnimatePresence, motion } from "framer-motion";
+import { deleteNumber } from "@/features/listSlice";
 
 interface IListNumbers {
   numberList: number[];
-  onDelete: (index: number) => void;
-  onDeleteAll: () => void;
 }
 
-export default function ListNUmbers({ numberList, onDelete }: IListNumbers) {
+export default function ListNUmbers({ numberList }: IListNumbers) {
+  const dispatch = useDispatch();
+  const handleDeleteNumber = (index: number) => {
+    dispatch(deleteNumber(index));
+  };
   return (
     <div className={style.list__box}>
       <h2 className={style.list__title}>list of numbers :</h2>
@@ -32,7 +36,7 @@ export default function ListNUmbers({ numberList, onDelete }: IListNumbers) {
                 {number}
                 <button
                   className={style.delete__button}
-                  onClick={() => onDelete(index)}
+                  onClick={() => handleDeleteNumber(index)}
                 >
                   <svg viewBox="0 0 16 16" width="12" height="12">
                     <path
