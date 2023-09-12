@@ -1,7 +1,10 @@
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-import { createSlice } from "@reduxjs/toolkit";
+interface ListState {
+  numberList: number[];
+}
 
-const initialState = {
+const initialState: ListState = {
   numberList: [],
 };
 
@@ -9,10 +12,10 @@ const listSlice = createSlice({
   name: "list",
   initialState,
   reducers: {
-    addNumber: (state, action) => {
+    addNumber: (state, action: PayloadAction<number>) => {
       state.numberList.push(action.payload);
     },
-    deleteNumber: (state, action) => {
+    deleteNumber: (state, action: PayloadAction<number>) => {
       state.numberList = state.numberList.filter(
         (_, index) => index !== action.payload
       );
