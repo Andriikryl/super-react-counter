@@ -1,0 +1,21 @@
+.statistic__box{
+    border: 1px solid white;
+    padding: 20px;
+    margin-block-end: 40px;
+}
+
+.statistic__title{
+    color: white;
+    font-size: 25px;
+    border-bottom: 1px solid white;
+    margin-block-end: 10px;
+}
+
+.total__sum{
+    font-size: 20px;
+    color: white;
+}
+
+.total__sum span{
+    border-bottom: 3px solid #ff4617;
+}

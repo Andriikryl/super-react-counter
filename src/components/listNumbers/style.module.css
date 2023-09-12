@@ -1,6 +1,7 @@
 .list__box{
     grid-area: sidebar; 
     border: 1px solid white;
+    overflow-x: hidden;
     padding: 30px;
     height: 692px;
     overflow-y: auto;
