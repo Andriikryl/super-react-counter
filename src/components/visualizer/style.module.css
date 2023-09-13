@@ -35,3 +35,19 @@
     position: relative;
     border: 1px solid white;
 }
+
+.button__group{
+    padding: 20px;
+    border: 1px solid white;
+    display: flex;
+    gap: 20px;
+    border-top: none;
+}
+
+.button{
+    padding: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+    cursor: pointer;
+    color: white;
+}
