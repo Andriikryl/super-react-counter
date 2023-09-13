@@ -7,6 +7,12 @@
     overflow-y: auto;
     scroll-behavior: smooth;
   }
+  @media (max-width:760px) {
+    .list__box{
+      order: 2;
+      height: 300px;
+    }
+  }
 
   .list__box::-webkit-scrollbar{
     width: 5px;

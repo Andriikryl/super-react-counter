@@ -1,5 +1,4 @@
 .count__section{
-    height: 100dvh;
     background-color: #1d1d1d;
     padding-block-start: 100px;
     margin-block-end: 10px;
@@ -13,10 +12,20 @@
   gap: 8px;
 }
 
+
 .counter__body{
   grid-area: body; 
 }
 
+@media (max-width:760px) {
+  .container{
+   display: flex;
+   flex-direction: column;
+  }
+  .counter__body{
+    order: 1;
+  }
+}
 .counter__box{
     display: flex;
     flex-direction: column;
@@ -106,6 +115,22 @@
   .form{
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 560px) {
+    .form{
+      gap: 10px;
+    }
+    .input{
+      width: 100%;
+    }
+    .input__button{
+      width: 100%;
+    }
+    .counter__box{
+      padding: 10px;
+    }
   }
 
   
