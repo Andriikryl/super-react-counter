@@ -1,0 +1,14 @@
+.question{
+    margin-block-end: 100px;
+}
+
+.question__title{
+    color: white;
+    font-size: 30px;
+    margin-block-end: 10px;
+}
+
+.accordion__body{
+    color: white;
+    padding-block-start: 20px;
+}

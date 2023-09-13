@@ -2,4 +2,5 @@
     padding-block: 40px;
     border-top: 1px solid white;
     color: white;
+    grid-area: footer; 
 }

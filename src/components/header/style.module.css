@@ -2,4 +2,35 @@
     padding-block: 40px;
     border-bottom: 1px solid white;
     color: white;
+    grid-area: header; 
+}
+
+.nav__list{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav__item{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav__item:nth-child(1)::after{
+    content: "";
+    display: block;
+    height: 20px;
+    width: 1px;
+    background-color: white;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
 }
