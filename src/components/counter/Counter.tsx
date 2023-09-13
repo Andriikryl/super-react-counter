@@ -9,7 +9,7 @@ import MoreButtonsGroup from "../moreButtonsGroup/MoreButtonsGroup";
 import CounterControls from "../counterControls/CounterControls";
 import IncDecGroupButton from "../incDecGroupButton/IncDecGroupButton";
 import ListNUmbers from "../listNumbers/ListNUmbers";
-import { addNumber, deleteAllNumbers } from "@/features/listSlice";
+import { addNumber, addNumbers, deleteAllNumbers } from "@/features/listSlice";
 import { RootState } from "@/store/store";
 
 const Counter = () => {
@@ -37,6 +37,16 @@ const Counter = () => {
     dispatch(deleteAllNumbers());
   };
 
+  const addRandomNumbers = () => {
+    const randomNumbers = []; // Initialize an array for random numbers
+    for (let i = 0; i < 5; i++) {
+      // Change 5 to the number of random numbers you want to add
+      const randomNumber = Math.floor(Math.random() * 100); // Generate a random number (adjust the range as needed)
+      randomNumbers.push(randomNumber);
+    }
+    dispatch(addNumbers(randomNumbers)); // Dispatch the action to add random numbers
+  };
+
   return (
     <section className={style.count__section}>
       <Container className={style.container}>
@@ -46,6 +56,7 @@ const Counter = () => {
             resetAll={resetAll}
             addToNumberList={addToNumberList}
             handleDeleteAll={handleDeleteAll}
+            addRandomNumbers={addRandomNumbers}
           />
           <div className={style.counter__box}>
             <AnimatedNumber value={count} />

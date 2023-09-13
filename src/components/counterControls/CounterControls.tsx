@@ -5,12 +5,14 @@ interface ICounterControls {
   resetAll: () => void;
   addToNumberList: () => void;
   handleDeleteAll: () => void;
+  addRandomNumbers: () => void;
 }
 
 export default function CounterControls({
   resetAll,
   addToNumberList,
   handleDeleteAll,
+  addRandomNumbers,
 }: ICounterControls) {
   return (
     <div className={style.box__controls}>
@@ -22,6 +24,9 @@ export default function CounterControls({
       </button>
       <button className={style.button} onClick={handleDeleteAll}>
         Delete All list
+      </button>
+      <button className={style.button} onClick={addRandomNumbers}>
+        Add random array
       </button>
     </div>
   );

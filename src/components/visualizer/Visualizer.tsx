@@ -48,7 +48,7 @@ export default function Visualizer() {
             Sort Array
           </button>
           <button className={style.button} onClick={handleRandomSort}>
-            random sort Array
+            Random sort array
           </button>
         </div>
       </Container>

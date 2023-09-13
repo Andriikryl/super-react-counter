@@ -49,9 +49,12 @@ const listSlice = createSlice({
         }
       } while (swapped);
     },
+    addNumbers: (state, action: PayloadAction<number[]>) => {
+      state.numberList = state.numberList.concat(action.payload);
+    },
   },
 });
 
-export const { addNumber, deleteNumber, deleteAllNumbers, sortNumberList, randomSortNumberList, bubbleSortNumberList } = listSlice.actions;
+export const { addNumber, deleteNumber, deleteAllNumbers, sortNumberList, randomSortNumberList, bubbleSortNumberList, addNumbers } = listSlice.actions;
 
 export default listSlice.reducer;
